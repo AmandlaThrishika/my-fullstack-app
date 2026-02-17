@@ -22,5 +22,5 @@ r = redis.from_url(redis_url, decode_responses=True)
 
 @app.get("/")
 def read_root():
-    r.set("status", "Cloud Redis working!")
+    r.set("status", "Hey Gnanamitra team the connection is  working!")
     return {"message": r.get("status")}
