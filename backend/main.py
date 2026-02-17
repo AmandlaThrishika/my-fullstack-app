@@ -5,10 +5,10 @@ from sqlalchemy import create_engine
 
 app = FastAPI()
 
-# Allow frontend domain
+# 🔥 CORS FIX
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all (safe for learning)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -20,3 +20,4 @@ engine = create_engine(DATABASE_URL, connect_args={"sslmode": "require"})
 @app.get("/")
 def read_root():
     return {"message": "Cloud backend running!"}
+
